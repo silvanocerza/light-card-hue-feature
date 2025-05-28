@@ -22,7 +22,7 @@ const getTranslatedString = (
   }
 };
 
-export default localize = (hass: HomeAssistant, key: string) => {
+const localize = (hass: HomeAssistant, key: string) => {
   const language = hass.locale.language ?? DEFAULT_LANGUAGE;
   let translated = getTranslatedString(key, language);
   if (!translated) {
@@ -30,3 +30,4 @@ export default localize = (hass: HomeAssistant, key: string) => {
   }
   return translated ?? key;
 };
+export default localize;
