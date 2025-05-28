@@ -11,10 +11,10 @@
 // WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 // See the License for the specific language governing permissions and
 // limitations under the License.
-import { customElement, property, state } from "lit/decorators";
+import { customElement, property, state } from "lit/decorators.js";
 import { html, LitElement, nothing } from "lit";
 import memoizeOne from "memoize-one";
-import { styleMap } from "lit/directives/style-map";
+import { styleMap } from "lit/directives/style-map.js";
 import type {
   HassEntity,
   HassEntityAttributeBase,

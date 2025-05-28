@@ -12,6 +12,8 @@
   "packageManager": "pnpm@10.8.1",
   "devDependencies": {
     "@eslint/js": "^9.27.0",
+    "@rollup/plugin-commonjs": "^28.0.3",
+    "@rollup/plugin-node-resolve": "^16.0.1",
     "@rollup/plugin-terser": "^0.4.4",
     "@rollup/plugin-typescript": "^12.1.2",
     "eslint": "^9.27.0",
@@ -25,7 +27,6 @@
     "custom-card-helpers": "^1.9.0",
     "home-assistant-js-websocket": "^9.5.0",
     "lit": "^3.3.0",
-    "lit-element": "^4.2.0",
     "memoize-one": "^6.0.0"
   }
 }
