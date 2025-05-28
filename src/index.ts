@@ -107,7 +107,7 @@ const supportsLightColorHueCardFeature = (stateObj: HassEntity) => {
   );
 };
 
-@customElement("hui-light-color-hue-card-feature")
+@customElement("light-color-hue")
 class HuiLightColorHueCardFeature extends LitElement {
   @property({ attribute: false }) public hass?: HomeAssistant;
 
@@ -200,19 +200,13 @@ class HuiLightColorHueCardFeature extends LitElement {
   }
 }
 
-declare global {
-  interface HTMLElementTagNameMap {
-    "hui-light-color-hue-card-feature": HuiLightColorHueCardFeature;
-  }
-}
-
 export interface LightColorHueCardFeatureConfig extends LovelaceCardConfig {
   type: "light-color-hue";
 }
 
-window.customCardFeatures = window.customCardFeatures || [];
-window.customCardFeatures.push({
-  type: "light-color-hue",
-  name: "",
+window.customTileFeatures = window.customTileFeatures || [];
+window.customTileFeatures.push({
+  type: "custom:light-color-hue",
+  name: "Light color hue",
   supported: supportsLightColorHueCardFeature,
 });
