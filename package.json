@@ -1,6 +1,6 @@
 {
   "name": "light-card-hue-feature",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "",
   "scripts": {
     "lint": "npx eslint src/*.ts",
