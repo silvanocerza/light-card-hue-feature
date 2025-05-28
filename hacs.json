@@ -1,3 +1,7 @@
 {
-  "name": "Light Card Hue Feature"
+  "name": "Light Card Hue Feature",
+  "render_readme": true,
+  "content_in_root": false,
+  "zip_release": false,
+  "filename": "light-card-hue-feature.js"
 }
