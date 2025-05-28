@@ -5,7 +5,7 @@ export default [
   {
     input: "src/index.ts",
     output: {
-      dir: "dist",
+      file: "dist/light-card-hue-feature.js",
       format: "es",
     },
     plugins: [typescript(), terser()],

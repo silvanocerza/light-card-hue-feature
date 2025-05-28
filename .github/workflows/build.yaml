@@ -1,0 +1,29 @@
+name: "Build"
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build:
+    name: Build project
+    runs-on: ubuntu-latest
+    steps:
+      - name: Install pnpm
+        run: npm install -g pnpm@latest-10
+
+      - uses: actions/checkout@v4
+
+      - name: HACS validation
+        uses: "hacs/action@main"
+        with:
+          category: "plugin"
+
+      - name: Build
+        run: |
+          pnpm install
+          pnpm build
