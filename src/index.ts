@@ -23,8 +23,6 @@ import type {
 import { HomeAssistant, LovelaceCardConfig } from "custom-card-helpers";
 
 const UNAVAILABLE = "unavailable";
-const UNKNOWN = "unknown";
-const OFF = "off";
 
 const enum LightColorMode {
   UNKNOWN = "unknown",
@@ -84,14 +82,7 @@ const rgb2hsv = (rgb: [number, number, number]): [number, number, number] => {
 };
 
 const stateActive = (stateObj: HassEntity) => {
-  const compareState = state !== undefined ? state : stateObj?.state;
-  if ([UNKNOWN, UNAVAILABLE].includes(compareState.toString())) {
-    return false;
-  }
-  if (compareState === OFF) {
-    return false;
-  }
-  return true;
+  return stateObj?.state !== "on";
 };
 
 const supportsLightColorHueCardFeature = (stateObj: HassEntity) => {
@@ -148,7 +139,7 @@ class HuiLightColorHueCardFeature extends LitElement {
       <ha-control-slider
         .value=${hue}
         mode="cursor"
-        .showHandle=${stateActive(this.stateObj)}
+        .showHandle=${this.stateObj!.state === "on"}
         .disabled=${this.stateObj!.state === UNAVAILABLE}
         @value-changed=${this._valueChanged}
         .label=${this.hass.localize("ui.card.light.color")}
