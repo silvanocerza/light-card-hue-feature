@@ -105,7 +105,7 @@ export class HuiLightColorHueCardFeature extends LitElement {
 
   static getStubConfig(): LightColorHueCardFeatureConfig {
     return {
-      type: "light-color-hue",
+      type: "custom:light-color-hue",
     };
   }
 
@@ -189,12 +189,12 @@ export class HuiLightColorHueCardFeature extends LitElement {
 }
 
 export interface LightColorHueCardFeatureConfig extends LovelaceCardConfig {
-  type: "light-color-hue";
+  type: "custom:light-color-hue";
 }
 
 window.customTileFeatures = window.customTileFeatures || [];
 window.customTileFeatures.push({
-  type: "custom:light-color-hue",
+  type: "light-color-hue",
   name: "Light color hue",
   supported: supportsLightColorHueCardFeature,
 });
