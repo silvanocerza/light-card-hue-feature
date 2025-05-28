@@ -21,6 +21,7 @@ import type {
   HassEntityBase,
 } from "home-assistant-js-websocket";
 import { HomeAssistant, LovelaceCardConfig } from "custom-card-helpers";
+import localize from "./localization";
 
 const UNAVAILABLE = "unavailable";
 
@@ -81,10 +82,6 @@ const rgb2hsv = (rgb: [number, number, number]): [number, number, number] => {
   return [60 * (h < 0 ? h + 6 : h), v && c / v, v];
 };
 
-const stateActive = (stateObj: HassEntity) => {
-  return stateObj?.state !== "on";
-};
-
 const supportsLightColorHueCardFeature = (stateObj: HassEntity) => {
   const entityId = stateObj.entity_id;
   const domain = entityId.substring(0, entityId.indexOf("."));
@@ -99,7 +96,7 @@ const supportsLightColorHueCardFeature = (stateObj: HassEntity) => {
 };
 
 @customElement("light-color-hue")
-class HuiLightColorHueCardFeature extends LitElement {
+export class HuiLightColorHueCardFeature extends LitElement {
   @property({ attribute: false }) public hass?: HomeAssistant;
 
   @property({ attribute: false }) public stateObj?: HassEntity;
@@ -142,7 +139,7 @@ class HuiLightColorHueCardFeature extends LitElement {
         .showHandle=${this.stateObj!.state === "on"}
         .disabled=${this.stateObj!.state === UNAVAILABLE}
         @value-changed=${this._valueChanged}
-        .label=${this.hass.localize("ui.card.light.color")}
+        .label=${localize(this.hass, "ui.card.light.hue")}
         .min=${0}
         .max=${360}
         .step=${1}
