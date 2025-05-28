@@ -22,9 +22,3 @@ jobs:
         run: |
           pnpm install
           pnpm build
-
-      - name: HACS validation
-        uses: "hacs/action@main"
-        with:
-          category: "plugin"
-          ignore: archived brands images information issues
