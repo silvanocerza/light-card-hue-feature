@@ -10,7 +10,11 @@ Custom card feature that adds a slider to pick the hue of all light fixture that
 
 Light Card Hue Feature can be installed with [HACS][hacs] (Home Assistant Community Store).
 
-The project has still not been published on HACS so it must be installed as a custom repository.
+Use this button to open the repository in HACS:
+
+[![Open your Home Assistant instance and open a repository inside the Home Assistant Community Store.](https://my.home-assistant.io/badges/hacs_repository.svg)](https://my.home-assistant.io/redirect/hacs_repository/?owner=silvanocerza&repository=light-card-hue-feature)
+
+Or you can do it manually following these steps:
 
 1. Open HACS in your Home assistant
 1. Click the three dots in top right corner
@@ -23,7 +27,7 @@ The project has still not been published on HACS so it must be installed as a cu
 1. Click the _DOWNLOAD_ button in the bottom right corner
 1. Click _DOWNLOAD_ in the dialog
 
-### Manual
+### Without HACS
 
 1. Download `light-card-hue-feature.js` from the [latest release][latest-release]
 1. Move `light-card-hue-feature.js` file in Home Assistant `config/www/` folder
