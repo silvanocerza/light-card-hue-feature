@@ -88,7 +88,7 @@ const supportsLightColorHueCardFeature = (stateObj: HassEntity) => {
   return (
     domain === "light" &&
     (lightSupportsColorMode(stateObj, LightColorMode.XY) ||
-      lightSupportsColorMode(stateObj, LightColorMode.XY) ||
+      lightSupportsColorMode(stateObj, LightColorMode.HS) ||
       lightSupportsColorMode(stateObj, LightColorMode.RGB) ||
       lightSupportsColorMode(stateObj, LightColorMode.RGBW) ||
       lightSupportsColorMode(stateObj, LightColorMode.RGBWW))
